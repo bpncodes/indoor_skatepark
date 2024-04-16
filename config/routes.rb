@@ -8,7 +8,17 @@ Rails.application.routes.draw do
   post '/subscribe_to_plan', to: 'customers#subscribe_to_plan'
   root 'customers#index'
 
+  Rails.application.routes.draw do
+     mount Subscription::Create => '/'
+  end
+
+
 
   # Defines the root path route ("/")
   # root "posts#index"
 end
+
+
+
+# Do this to test the app:
+# bipin@Bipin:~$ curl -X POST http://localhost:3000/subscribe

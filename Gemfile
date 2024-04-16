@@ -69,3 +69,4 @@ end
 gem 'annotate'
 gem 'stripe'
 gem 'pry'
+gem 'grape'
