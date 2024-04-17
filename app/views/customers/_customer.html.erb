@@ -1,4 +1,23 @@
-<div id="<%= dom_id customer %>">
+<style>
+  .customer-details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .customer-details p {
+    margin: 5px 0;
+  }
+
+  .customer-details strong {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+</style>
+
+<div id="<%= dom_id customer %>" class="customer-details">
   <p>
     <strong>First name:</strong>
     <%= customer.first_name %>
@@ -28,5 +47,4 @@
     <strong>Stripe subscription id:</strong>
     <%= customer.stripe_subscription_id %>
   </p>
-
 </div>

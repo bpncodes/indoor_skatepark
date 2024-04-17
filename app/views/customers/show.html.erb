@@ -1,7 +1,75 @@
-<p style="color: green"><%= notice %></p>
+<style>
+  /* Container styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 20px;
+  }
 
+  /* Notice styles */
+  .notice {
+    color: green;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  /* Heading styles */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Form styles */
+  form {
+    margin-bottom: 20px;
+  }
+
+  /* Fieldset styles */
+  .field {
+    margin-bottom: 20px;
+  }
+
+  /* Button styles */
+  .btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #45a049;
+  }
+
+  /* Button container styles */
+  .actions {
+    margin-top: 20px;
+  }
+
+  /* Link styles */
+  .link {
+    margin-right: 20px;
+    font-size: 18px;
+  }
+
+  /* Button to styles */
+  .btn-to {
+    margin-top: 20px;
+  }
+</style>
+
+<!-- Notice -->
+<p class="notice"><%= notice %></p>
+
+<!-- Heading -->
 <h1><%= render @customer %></h1>
 
+<!-- Subscription form -->
 <%= form_tag subscribe_to_plan_path, method: :post do %>
   <%= hidden_field_tag :customer_id, @customer.id %>
   <div class="field">
@@ -9,14 +77,13 @@
   </div>
 
   <div class="actions">
-    <%= submit_tag 'Subscribe' %>
+    <%= submit_tag 'Subscribe', class: "btn" %>
   </div>
 <% end %>
 
-
+<!-- Links -->
 <div>
-  <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
-  <%= link_to "Back to customers", customers_path %>
-
-  <%= button_to "Destroy this customer", @customer, method: :delete %>
+  <%= link_to "Edit this customer", edit_customer_path(@customer), class: "link" %>
+  <%= link_to "Back to customers", customers_path, class: "link" %>
+  <%= button_to "Destroy this customer", @customer, method: :delete, class: "btn btn-to", data: { confirm: 'Are you sure?' } %>
 </div>
