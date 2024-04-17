@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   root 'customers#index'
 
   Rails.application.routes.draw do
-     mount Subscription::Create => '/'
+     mount Subscription::Normal => '/'
+     mount Subscription::Race => '/'
   end
 
 
