@@ -21,4 +21,4 @@ class Subscription::Normal < Grape::API
 end
 
 # Call using thistatus
-# curl -X POST http://localhost:3000/subscribe_normal?id=1
+# ab -n 10 -c 2 -p post_data.txt -T application/x-www-form-urlencoded http://localhost:3000/subscribe_normal

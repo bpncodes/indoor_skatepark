@@ -18,3 +18,4 @@ end
 
 # Call using this
 # curl -X POST http://localhost:3000/subscribe_race?id=1
+# ab -n 10 -c 2 -p post_data.txt -T application/x-www-form-urlencoded http://localhost:3000/subscribe_race
